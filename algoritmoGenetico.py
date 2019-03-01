@@ -19,7 +19,7 @@ class Poligono(object):
 #Devuelve un objeto Poligono
 def crearPoligonoRandom():
     vertice1 = [random.randint(0,512),random.randint(0,512)]
-    vertice2 = [random.randint(0,512),random.randint(0,512)]
+    vertice2 = [abs(vertice1[0] - random.randint(vertice1[0],vertice1[0] + 100)), abs(vertice1[0] - random.randint(vertice1[1],vertice1[1] + 100))]
     vertice3 = [random.randint(0,512),random.randint(0,512)]
     color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
     poligono = Poligono(vertice1=vertice1,vertice2=vertice2,vertice3=vertice3,color=color)
@@ -61,7 +61,7 @@ def generarPoblacion(numero):
 
 poblacion = generarPoblacion(100)
 
-for i in range(0,10):
+for i in range(0,1):
     cv2.imshow('aver'+str(i),poblacion[i])
 cv2.waitKey(0)
         
